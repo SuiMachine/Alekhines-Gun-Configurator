@@ -33,6 +33,12 @@
             this.B_WriteToAFile = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.CB_TextureQuality = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.CB_TextureFilter = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.CBox_AA = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -63,14 +69,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.P_developer = new System.Windows.Forms.PictureBox();
             this.LL_PCGW_link = new System.Windows.Forms.LinkLabel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.CB_TextureFilter = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.CB_TextureQuality = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -79,8 +83,6 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P_developer)).BeginInit();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -95,7 +97,7 @@
             // B_WriteToAFile
             // 
             this.B_WriteToAFile.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.B_WriteToAFile.Location = new System.Drawing.Point(307, 304);
+            this.B_WriteToAFile.Location = new System.Drawing.Point(307, 285);
             this.B_WriteToAFile.Name = "B_WriteToAFile";
             this.B_WriteToAFile.Size = new System.Drawing.Size(90, 23);
             this.B_WriteToAFile.TabIndex = 7;
@@ -105,13 +107,16 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.P_developer);
             this.panel1.Controls.Add(this.LL_PCGW_link);
             this.panel1.Controls.Add(this.B_WriteToAFile);
-            this.panel1.Location = new System.Drawing.Point(12, 9);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(416, 335);
+            this.panel1.Size = new System.Drawing.Size(411, 316);
             this.panel1.TabIndex = 8;
             // 
             // tableLayoutPanel2
@@ -150,6 +155,78 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(401, 249);
             this.tableLayoutPanel2.TabIndex = 30;
+            // 
+            // panel10
+            // 
+            this.panel10.AutoSize = true;
+            this.panel10.Controls.Add(this.CB_TextureQuality);
+            this.panel10.Controls.Add(this.label4);
+            this.panel10.Location = new System.Drawing.Point(202, 192);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(192, 27);
+            this.panel10.TabIndex = 38;
+            // 
+            // CB_TextureQuality
+            // 
+            this.CB_TextureQuality.FormattingEnabled = true;
+            this.CB_TextureQuality.Items.AddRange(new object[] {
+            "0 (default)",
+            "1",
+            "2",
+            "3",
+            "4"});
+            this.CB_TextureQuality.Location = new System.Drawing.Point(117, 3);
+            this.CB_TextureQuality.Name = "CB_TextureQuality";
+            this.CB_TextureQuality.Size = new System.Drawing.Size(72, 21);
+            this.CB_TextureQuality.TabIndex = 33;
+            this.CB_TextureQuality.SelectedIndexChanged += new System.EventHandler(this.CB_TextureQuality_SelectedIndexChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(85, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "*Texture Quality:";
+            // 
+            // panel9
+            // 
+            this.panel9.AutoSize = true;
+            this.panel9.Controls.Add(this.CB_TextureFilter);
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Location = new System.Drawing.Point(202, 158);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(192, 27);
+            this.panel9.TabIndex = 37;
+            // 
+            // CB_TextureFilter
+            // 
+            this.CB_TextureFilter.FormattingEnabled = true;
+            this.CB_TextureFilter.Items.AddRange(new object[] {
+            "0",
+            "1",
+            "2 (default)",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"});
+            this.CB_TextureFilter.Location = new System.Drawing.Point(117, 3);
+            this.CB_TextureFilter.Name = "CB_TextureFilter";
+            this.CB_TextureFilter.Size = new System.Drawing.Size(72, 21);
+            this.CB_TextureFilter.TabIndex = 33;
+            this.CB_TextureFilter.SelectedIndexChanged += new System.EventHandler(this.CB_TextureFilter_SelectedIndexChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(3, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "*Texture Filter:";
             // 
             // panel8
             // 
@@ -449,7 +526,7 @@
             // 
             this.P_developer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.P_developer.Image = global::AlekhinesGunConfigurator.Properties.Resources.donatebutton;
-            this.P_developer.Location = new System.Drawing.Point(161, 306);
+            this.P_developer.Location = new System.Drawing.Point(161, 287);
             this.P_developer.Name = "P_developer";
             this.P_developer.Size = new System.Drawing.Size(74, 21);
             this.P_developer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -461,7 +538,7 @@
             // 
             this.LL_PCGW_link.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.LL_PCGW_link.AutoSize = true;
-            this.LL_PCGW_link.Location = new System.Drawing.Point(4, 309);
+            this.LL_PCGW_link.Location = new System.Drawing.Point(4, 290);
             this.LL_PCGW_link.Name = "LL_PCGW_link";
             this.LL_PCGW_link.Size = new System.Drawing.Size(78, 13);
             this.LL_PCGW_link.TabIndex = 12;
@@ -469,83 +546,29 @@
             this.LL_PCGW_link.Text = "PCGamingWiki";
             this.LL_PCGW_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LL_PCGW_link_LinkClicked);
             // 
-            // panel9
+            // label6
             // 
-            this.panel9.AutoSize = true;
-            this.panel9.Controls.Add(this.CB_TextureFilter);
-            this.panel9.Controls.Add(this.label3);
-            this.panel9.Location = new System.Drawing.Point(202, 158);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(192, 27);
-            this.panel9.TabIndex = 37;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(4, 255);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(202, 13);
+            this.label6.TabIndex = 31;
+            this.label6.Text = "* - Setting doesn\'t seem to have an effect";
             // 
-            // CB_TextureFilter
+            // label7
             // 
-            this.CB_TextureFilter.FormattingEnabled = true;
-            this.CB_TextureFilter.Items.AddRange(new object[] {
-            "0",
-            "1",
-            "2 (default)",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8"});
-            this.CB_TextureFilter.Location = new System.Drawing.Point(117, 3);
-            this.CB_TextureFilter.Name = "CB_TextureFilter";
-            this.CB_TextureFilter.Size = new System.Drawing.Size(72, 21);
-            this.CB_TextureFilter.TabIndex = 33;
-            this.CB_TextureFilter.SelectedIndexChanged += new System.EventHandler(this.CB_TextureFilter_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 6);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "*Texture Filter:";
-            // 
-            // panel10
-            // 
-            this.panel10.AutoSize = true;
-            this.panel10.Controls.Add(this.CB_TextureQuality);
-            this.panel10.Controls.Add(this.label4);
-            this.panel10.Location = new System.Drawing.Point(202, 192);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(192, 27);
-            this.panel10.TabIndex = 38;
-            // 
-            // CB_TextureQuality
-            // 
-            this.CB_TextureQuality.FormattingEnabled = true;
-            this.CB_TextureQuality.Items.AddRange(new object[] {
-            "0 (default)",
-            "1",
-            "2",
-            "3",
-            "4"});
-            this.CB_TextureQuality.Location = new System.Drawing.Point(117, 3);
-            this.CB_TextureQuality.Name = "CB_TextureQuality";
-            this.CB_TextureQuality.Size = new System.Drawing.Size(72, 21);
-            this.CB_TextureQuality.TabIndex = 33;
-            this.CB_TextureQuality.SelectedIndexChanged += new System.EventHandler(this.CB_TextureQuality_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 6);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(85, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "*Texture Quality:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(4, 268);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(116, 13);
+            this.label7.TabIndex = 32;
+            this.label7.Text = "** - Better don\'t touch it";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(443, 382);
+            this.ClientSize = new System.Drawing.Size(411, 320);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -556,6 +579,10 @@
             this.panel1.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel7.ResumeLayout(false);
@@ -571,10 +598,6 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.P_developer)).EndInit();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -621,6 +644,8 @@
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ComboBox CB_TextureFilter;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
 
