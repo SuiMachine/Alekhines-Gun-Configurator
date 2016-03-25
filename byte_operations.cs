@@ -54,6 +54,14 @@ namespace AlekhinesGunConfigurator
             }
         }
 
+        public void replaceBytes(byte data, int address)
+        {
+            if (address < array.Length)
+            {
+                array[address] = data;
+            }
+        }
+
         public byte[] returnArray()
         {
             return array;
