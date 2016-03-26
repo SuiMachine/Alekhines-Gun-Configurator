@@ -244,7 +244,7 @@ namespace AlekhinesGunConfigurator
         int AspectRatio = 0;
         float Gamma = 0;
         byte ControllerEnabled = 0;
-        int Language = 0x68;
+        int Language = 0;
         #endregion
 
         public Form1()
@@ -637,10 +637,10 @@ namespace AlekhinesGunConfigurator
             settingsHelper.replaceBytes(PostFilters, (int)adressesStatic.PostFilters);
             settingsHelper.replaceBytes(AmbientOcclusion, (int)adressesStatic.AmbientOcclusion);
             settingsHelper.replaceBytes(HDRRendering, (int)adressesStatic.HDRRendering);
+            settingsHelper.replaceBytes(BitConverter.GetBytes(Gamma), (int)adressesStatic.Gamma);
             settingsHelper.replaceBytes(BitConverter.GetBytes(AspectRatio), (int)adressesStatic.AspectRatio);
             settingsHelper.replaceBytes(ControllerEnabled, (int)adressesStatic.ControllerEnabled);
-            settingsHelper.replaceBytes(BitConverter.GetBytes(Language), (int)adressesStatic.Language);
-            settingsHelper.replaceBytes(BitConverter.GetBytes(Gamma), (int)adressesStatic.Gamma);
+            settingsHelper.replaceBytes(BitConverter.GetBytes(Convert.ToUInt16(Language)), (int)adressesStatic.Language);
 
             //Writting and getting results
             bool success = true;
@@ -849,6 +849,11 @@ namespace AlekhinesGunConfigurator
         private void CBox_AmbientOcclusion_SelectedIndexChanged(object sender, EventArgs e)
         {
             AmbientOcclusion = (byte)CBox_AmbientOcclusion.SelectedIndex;
+        }
+
+        private void CBox_Lanuage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Language = CBox_Lanuage.SelectedIndex;
         }
 
         private void TBar_AmbientVolume_Scroll(object sender, EventArgs e)

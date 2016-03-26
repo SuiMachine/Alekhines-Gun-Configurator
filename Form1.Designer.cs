@@ -301,11 +301,16 @@
             this.CBox_Lanuage.Items.AddRange(new object[] {
             "English",
             "French",
-            "German"});
+            "German",
+            "Italian",
+            "Spanish",
+            "Portuguese",
+            "Russian"});
             this.CBox_Lanuage.Location = new System.Drawing.Point(101, 3);
             this.CBox_Lanuage.Name = "CBox_Lanuage";
             this.CBox_Lanuage.Size = new System.Drawing.Size(88, 21);
             this.CBox_Lanuage.TabIndex = 33;
+            this.CBox_Lanuage.SelectedIndexChanged += new System.EventHandler(this.CBox_Lanuage_SelectedIndexChanged);
             // 
             // label50
             // 
