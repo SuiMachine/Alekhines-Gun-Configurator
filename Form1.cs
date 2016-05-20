@@ -227,7 +227,9 @@ namespace AlekhinesGunConfigurator
             Gamma = 0x5F,
             AspectRatio = 0x63,
             ControllerEnabled = 0x67,
-            Language = 0x68
+            Language = 0x68,
+            ControllerYinversion = 0x6C,
+            PlayerBacklight = 0x6D
         }
 
         float mouseSensitivity = 0;
@@ -245,6 +247,8 @@ namespace AlekhinesGunConfigurator
         float Gamma = 0;
         byte ControllerEnabled = 0;
         int Language = 0;
+        byte ControllerYInversion = 0;
+        byte PlayerBacklight = 0;
         #endregion
 
         public Form1()
@@ -479,6 +483,8 @@ namespace AlekhinesGunConfigurator
                 ControllerEnabled = data2[(int)adressesStatic.ControllerEnabled];
                 Language = BitConverter.ToInt32(data2, (int)adressesStatic.Language);
                 Gamma = BitConverter.ToSingle(data2, (int)adressesStatic.Gamma);
+                ControllerYInversion = data2[(int)adressesStatic.ControllerYinversion];
+                PlayerBacklight = data2[(int)adressesStatic.PlayerBacklight];
 
                 //Now display stuff
                 TBar_MouseSensitivity.Value = (int)(mouseSensitivity * 10);
@@ -528,6 +534,8 @@ namespace AlekhinesGunConfigurator
                 CBox_HDRRendering.SelectedIndex = HDRRendering;
                 CBox_AspectRatio.SelectedIndex = AspectRatio;
                 CB_ControllerEnabled.Checked = Convert.ToBoolean(ControllerEnabled);
+                CB_ControllerYInversion.Checked = Convert.ToBoolean(ControllerYInversion);
+                CB_PlayerBacklight.Checked = Convert.ToBoolean(PlayerBacklight);
                 CBox_Lanuage.SelectedIndex = Language;
                 TBar_Gamma.Value = (int)(Gamma * 50);
                 L_Gamma.Text = "Gamma: " + (Gamma*50).ToString();
@@ -641,6 +649,8 @@ namespace AlekhinesGunConfigurator
             settingsHelper.replaceBytes(BitConverter.GetBytes(AspectRatio), (int)adressesStatic.AspectRatio);
             settingsHelper.replaceBytes(ControllerEnabled, (int)adressesStatic.ControllerEnabled);
             settingsHelper.replaceBytes(BitConverter.GetBytes(Convert.ToUInt16(Language)), (int)adressesStatic.Language);
+            settingsHelper.replaceBytes(ControllerYInversion, (int)adressesStatic.ControllerYinversion);
+            settingsHelper.replaceBytes(PlayerBacklight, (int)adressesStatic.PlayerBacklight);
 
             //Writting and getting results
             bool success = true;
@@ -854,6 +864,22 @@ namespace AlekhinesGunConfigurator
         private void CBox_Lanuage_SelectedIndexChanged(object sender, EventArgs e)
         {
             Language = CBox_Lanuage.SelectedIndex;
+        }
+
+        private void CB_PlayerBacklight_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CB_PlayerBacklight.Checked)
+                PlayerBacklight = 1;
+            else
+                PlayerBacklight = 0;
+        }
+
+        private void CB_ControllerYInversion_CheckedChanged(object sender, EventArgs e)
+        {
+            if (CB_ControllerYInversion.Checked)
+                ControllerYInversion = 1;
+            else
+                ControllerYInversion = 0;
         }
 
         private void TBar_AmbientVolume_Scroll(object sender, EventArgs e)

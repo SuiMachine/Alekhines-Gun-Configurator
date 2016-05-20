@@ -189,6 +189,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.P_developer = new System.Windows.Forms.PictureBox();
             this.LL_PCGW_link = new System.Windows.Forms.LinkLabel();
+            this.CB_ControllerYInversion = new System.Windows.Forms.CheckBox();
+            this.CB_PlayerBacklight = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.panel42.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
@@ -290,7 +292,7 @@
             this.panel42.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel42.Controls.Add(this.CBox_Lanuage);
             this.panel42.Controls.Add(this.label50);
-            this.panel42.Location = new System.Drawing.Point(106, 529);
+            this.panel42.Location = new System.Drawing.Point(106, 558);
             this.panel42.Name = "panel42";
             this.panel42.Size = new System.Drawing.Size(194, 29);
             this.panel42.TabIndex = 42;
@@ -1481,6 +1483,8 @@
             this.tableLayoutPanel3.ColumnCount = 2;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel3.Controls.Add(this.CB_PlayerBacklight, 0, 4);
+            this.tableLayoutPanel3.Controls.Add(this.CB_ControllerYInversion, 0, 4);
             this.tableLayoutPanel3.Controls.Add(this.label16, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.TBar_MouseSensitivity, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.L_MouseSensitivity, 0, 2);
@@ -1491,12 +1495,13 @@
             this.tableLayoutPanel3.Cursor = System.Windows.Forms.Cursors.Default;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(3, 408);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 4;
+            this.tableLayoutPanel3.RowCount = 5;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(401, 113);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(401, 143);
             this.tableLayoutPanel3.TabIndex = 40;
             // 
             // label16
@@ -2148,6 +2153,30 @@
             this.LL_PCGW_link.Text = "PCGamingWiki";
             this.LL_PCGW_link.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LL_PCGW_link_LinkClicked);
             // 
+            // CB_ControllerYInversion
+            // 
+            this.CB_ControllerYInversion.AutoSize = true;
+            this.CB_ControllerYInversion.Location = new System.Drawing.Point(202, 117);
+            this.CB_ControllerYInversion.Name = "CB_ControllerYInversion";
+            this.CB_ControllerYInversion.Padding = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.CB_ControllerYInversion.Size = new System.Drawing.Size(136, 20);
+            this.CB_ControllerYInversion.TabIndex = 41;
+            this.CB_ControllerYInversion.Text = "Invert Y-axis (controller)";
+            this.CB_ControllerYInversion.UseVisualStyleBackColor = true;
+            this.CB_ControllerYInversion.CheckedChanged += new System.EventHandler(this.CB_ControllerYInversion_CheckedChanged);
+            // 
+            // CB_PlayerBacklight
+            // 
+            this.CB_PlayerBacklight.AutoSize = true;
+            this.CB_PlayerBacklight.Location = new System.Drawing.Point(4, 117);
+            this.CB_PlayerBacklight.Name = "CB_PlayerBacklight";
+            this.CB_PlayerBacklight.Padding = new System.Windows.Forms.Padding(0, 1, 0, 2);
+            this.CB_PlayerBacklight.Size = new System.Drawing.Size(102, 20);
+            this.CB_PlayerBacklight.TabIndex = 42;
+            this.CB_PlayerBacklight.Text = "Player Backlight";
+            this.CB_PlayerBacklight.UseVisualStyleBackColor = true;
+            this.CB_PlayerBacklight.CheckedChanged += new System.EventHandler(this.CB_PlayerBacklight_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2427,6 +2456,8 @@
         private System.Windows.Forms.Panel panel42;
         private System.Windows.Forms.ComboBox CBox_Lanuage;
         private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.CheckBox CB_PlayerBacklight;
+        private System.Windows.Forms.CheckBox CB_ControllerYInversion;
     }
 }
 
