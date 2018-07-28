@@ -8,6 +8,8 @@ namespace AlekhinesGunConfigurator
 {
     class byte_operations
     {
+
+
         byte[] array;
 
         public byte_operations(byte[] _array)
@@ -25,6 +27,8 @@ namespace AlekhinesGunConfigurator
                 }
             }
             return 0;
+
+            List<string> test = new List<string>();
         }
 
         private bool compareByteArrays(byte[] sequenceArray, byte[] dataArray, int lookFrom)
@@ -52,8 +56,10 @@ namespace AlekhinesGunConfigurator
                     array[address + i] = data[i];
                 }
             }
+
         }
 
+        
         public void replaceBytes(byte data, int address)
         {
             if (address < array.Length)
