@@ -147,7 +147,6 @@ namespace AlekhinesGunConfigurator
         static string _ConfigBackup2 = "settings.scg.bak";
         static string _Location = Path.Combine(System.Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "my games", "AlekhinesGun");
         static string PCGW_URL = "http://pcgamingwiki.com/";
-        static string donationURL = "https://www.twitchalerts.com/donate/suicidemachine";
         byte_operations helper, settingsHelper;
 
         #region GlobalVariables
@@ -685,16 +684,6 @@ namespace AlekhinesGunConfigurator
         private void LL_PCGW_link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start(PCGW_URL);
-        }
-
-        private void P_Donate_Click(object sender, EventArgs e)
-        {
-            Process.Start(donationURL);
-        }
-
-        private void P_developer_Click(object sender, EventArgs e)
-        {
-            Process.Start(donationURL);
         }
 
         #region UIToValueParse
